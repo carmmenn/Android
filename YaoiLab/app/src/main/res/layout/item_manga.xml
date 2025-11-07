@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="115dp"
+    android:layout_marginHorizontal="10dp"
+    android:layout_marginVertical="6dp"
+    android:elevation="5dp"
+    app:cardCornerRadius="14dp"
+    app:cardUseCompatPadding="true"
+    android:backgroundTint="#FFFFFF">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp">
+
+        <!-- Imagen del manga -->
+        <ImageView
+            android:id="@+id/imgManga"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:background="#F0F0F0"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintWidth_percent="0.35" />
+
+        <!-- Contenedor de la información -->
+        <LinearLayout
+            android:id="@+id/infoContainer"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingStart="8dp"
+            android:gravity="center_vertical"
+            app:layout_constraintStart_toEndOf="@id/imgManga"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <!-- Nombre del manga -->
+            <TextView
+                android:id="@+id/tvNombreManga"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Título del Manga"
+                android:textSize="16sp"
+                android:textColor="#222222"
+                android:textStyle="bold" />
+
+            <!-- Precio -->
+            <TextView
+                android:id="@+id/tvPrecioManga"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Precio: $9.99"
+                android:textSize="14sp"
+                android:textColor="#666666" />
+
+            <!-- Botón de favorito -->
+            <ImageButton
+                android:id="@+id/btnFavorito"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="6dp"
+                android:layout_gravity="end"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/heart"
+                android:tint="#FF4081"
+                android:contentDescription="Agregar a favoritos" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
